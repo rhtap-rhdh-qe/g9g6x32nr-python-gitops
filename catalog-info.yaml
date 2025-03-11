@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: g9g6x32nr-python-gitops
+  description: This is GitOps manifest for g9g6x32nr-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=g9g6x32nr-python
+    backstage.io/kubernetes-id: g9g6x32nr-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: g9g6x32nr-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:g9g6x32nr-python
